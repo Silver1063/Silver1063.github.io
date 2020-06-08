@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ajax Test</title>
+	<script src="myAjaxLib.js"></script>
+	<script>
+		function cback(text) {
+			alert(text);
+		}
+		window.onload = function(){
+			document.getElementById("btn1").onclick = function(){
+				doAjax("libtest.php", "param=hello", "cback", "GET", 0);
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="button" id="btn1" value="Make call" />
+</body>
+</html>

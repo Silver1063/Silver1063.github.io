@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Airport Information</title>
+	<style>
+		body {
+			width:350px;
+			font: 12px normal arial, verdana, sans-serif;
+		}
+		#info {
+			border: 1px solid black;
+			padding: 10px;
+		}
+	</style>
+	<script src="http://code.jquery.com/jquery-latest.min.js" /></script>
+	<script>
+		function displayData(data) {
+			var message = "Airport: " + data.name + "<br />";
+			message += "<h3>STATUS:</h3>";
+			for (i in data.status) {
+				if(data.status[i] != "") message += i + ": " + data.status[i] + "<br />";
+			}
+			message += "<h3>WEATHER:</h3>";
+			for (i in data.weather) {
+				if(i != "meta") message += i + ": " + data.weather[i] + "<br />";
+			}
+			$("#info").html(message);
+		}
+		$(document).ready(function(){
+			$("#btn").click(function(){
+				$("#info").html("Getting information ...");
+				var code = $("#airportCode").val();
+				$.get("http://services.faa.gov/airport/status/" + code + "?format=application/json",
+					'',
+					function(data){
+						displayData(data);
+					}
+				);
+			});
+		});
+	</script>
+</head>
+<body>
+	<h2>Airport Information</h2>
+	<input type=Text id="airportCode" value="SFO" size="6" />
+	<input id="btn" type="button" value="Get Information" />
+	<div id="info"></div>
+</body>
+</html>
