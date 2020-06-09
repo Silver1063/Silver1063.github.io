@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Hour 5</title>
+    </head>
+    <body>
+        <script>
+            var string = prompt("Enter String");
+            document.write(frstLetterToUpperCase(string));
+
+            function frstLetterToUpperCase(string)
+            {
+                var strArr = string.split(" ");
+                for (var i = 0, x = strArr.length; i < x; i++)
+                {
+                    strArr[i] = strArr[i][0].toUpperCase() + strArr[i].substr(1);
+                }
+                return strArr.join(" ");
+            }
+
+        </script>
+    </body>
+</html>

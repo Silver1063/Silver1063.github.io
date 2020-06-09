@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Hour 4</title>
+    </head>
+    <body>
+        <script>
+            var r = 5;
+            var h = 3;
+
+            document.write("radius: " + r + "<br>");
+            document.write("height: " + h + "<br>");
+            document.write("volume: " + cylinderVolume(r, h));
+
+            function cylinderVolume(radius, height)
+            {
+                return Math.round(Math.PI * Math.pow(radius, 2) * height);
+            }
+        </script>
+    </body>
+</html>
