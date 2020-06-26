@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Hour 12</title>
+        <link rel = "stylesheet" type = "text/css" href = "Hour12/sheet1.css" />
+        <script>
+            function ssEnable(mySheet)
+            {
+                var sheets = ["Hour12/sheet1.css", "Hour12/sheet2.css", "Hour12/sheet3.css"];
+                var link = document.getElementsByTagName("link").item(0);
+                var i = 0;
+                for(var i = 0; i < sheets.length; i++)
+                {
+                    //alert(sheets[i].substring(sheets[i].indexOf("/") + 1, sheets[i].indexOf(".")));
+                    if(mySheet == sheets[i].substring(sheets[i].indexOf("/") + 1, sheets[i].indexOf(".")))
+                    {
+                        link.setAttribute("href", sheets[i]) 
+                    }
+                }
+                return change;
+            }
+            function sheet()
+            {
+                var sheetName = prompt("Stylesheet Name?");
+                if(!ssEnable(sheetName)) alert("Not found - original stylesheet retained.");
+            }
+            window.onload = function()
+            {
+                document.getElementById("btn1").onclick = sheet;
+            }
+        </script>
+    </head>
+    <body>
+        Switch my stylesheet with the button below!(sheet1, sheet2, sheet3)
+        <br>
+        <input type = "button" id = "btn1" value = "Change Sheet" />
+    </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        #d001 {
+            color:red;
+            background-color: black;
+        }
+        #d002 {
+            color:white;
+            background-color: green;
+        }
+        #d003 {
+            color:purple;
+            background-color: orange;
+        }   
+    </style>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Hour 14</title>
+    </head>
+    <body>
+        <p id = "d001">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <p id = "d002">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <p id = "d003">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <script src = "prototype.js"></script>
+        <script>
+            var MyUtils = {
+                truncate: function(element, length){
+                    element = $(element);
+                    return element.update(element.innerHTML.truncate(length));
+                },
+                updateAndMark: function(element, html){
+                    return $(element).update(html).addClassName('updated');
+                }
+            };
+        
+            Element.addMethods(MyUtils);
+        
+            // now you can:
+            $('d001').truncate(100);
+        </script>
+    </body>
+</html>

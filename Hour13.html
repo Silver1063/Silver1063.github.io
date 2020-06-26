@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        html, body {
+            height:100%;
+            padding: 0%;
+            margin: 0%;
+        }
+        #div0001 {
+            color: black;
+            background-color: red;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Hour 13</title>
+    </head>
+    <body>
+        
+        <div id = "div0001">
+        </div>
+
+        <script>
+            document.body.innerHeight = window.innerHeight;
+            var myDiv = document.getElementById("div0001");
+
+            myDiv.style.borderBottomLeftRadius = "50%";
+            myDiv.style.borderBottomRightRadius = "50%";
+            myDiv.style.borderTopLeftRadius = "50%";
+            myDiv.style.borderTopRightRadius = "50%";
+
+            console.log(getComputedStyle(myDiv).borderBottomLeftRadius);
+            console.log(getComputedStyle(myDiv).borderBottomRightRadius);
+            console.log(getComputedStyle(myDiv).borderTopLeftRadius);
+            console.log(getComputedStyle(myDiv).borderTopRightRadius);
+        </script>
+    </body>
+</html>
