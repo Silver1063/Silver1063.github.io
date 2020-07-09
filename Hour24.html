@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Hour 24</title>
+        <link rel = "stylesheet" href = "https://code.jquery.com/qunit/qunit-1.16.0.css">
+        <script src = "tax.js"></script>
+        <script src = "http://code.jquery.com/qunit/qunit-1.16.0.js"></script>
+        <script>
+            
+            function test(amount, rate, expected)
+            {
+                results.total++;
+                var result = addTax(amount, rate);
+                if(result !== expected)
+                {
+                    results.failed++;
+                    console.log("Expected " + expected + ", but instead goot " + result);
+                }
+            }
+
+            var results = { total: 0, failed: 0};
+            test(1, 10, 1.1);
+            test(5, 12, 5.6);
+            test(100, 17.5, 117.5);
+
+            QUnit.test("add tax test", function( assert ) {
+                assert.equal(addTax(1, 10), 1.1);
+                assert.equal(addTax(5, 12), 5.6);
+                assert.equal(addTax(100, 17.5), 117.5);
+            });
+
+        </script>
+    </head>
+    <body>
+        <div id = "qunit"></div>
+        <div id = "qunit-fixture"></div>
+    </body>
+</html>
